@@ -1,0 +1,17 @@
+<div class="Login">
+  <h1 class="mb-5 form-header display-4">Log In</h1>
+  <app-error *ngIf="error" [error]="error"></app-error>
+  <form (submit)="onHandleLogin()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input name="email" [(ngModel)]="email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input name="password" [(ngModel)]="password"  type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-login btn-lg text-light">Log In</button>
+  </form>
+</div>

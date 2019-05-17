@@ -1,0 +1,23 @@
+<div class="New-Book">
+  <h1 class="mb-5 form-header display-4">New Book</h1>
+  <app-error *ngIf="error" [error]="error"></app-error>
+  <form enctype="multipart/form-data" (submit)="onHandleCreate()">
+    <div class="form-group">
+      <label for="bookName">Name</label>
+      <input name="name" [(ngModel)]="name" type="text" class="form-control form-control-lg" id="bookName"
+        placeholder="Enter name of the book">
+    </div>
+    <div class="form-group">
+      <label for="bookdesc">Description</label>
+      <textarea class="form-control form-control-lg" name="description" [(ngModel)]="description" id="bookdesc"
+        placeholder="About your book"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="bookImage">Book Image</label><br>
+      <input (change)="onHandleFileChange($event)" class="" type="file" name="bookImage" id="bookImage"><br>
+      <small class="text-muted">Select an image to display with your book</small>
+    </div>
+    <button type="submit" class="btn btn-create btn-lg text-light">Create</button>
+  </form>
+</div>
+

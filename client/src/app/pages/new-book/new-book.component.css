@@ -1,0 +1,12 @@
+.New-Book {
+  width: 60%;
+  margin: 3rem auto;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.btn-create {
+  background: rgb(36, 60, 168);
+}

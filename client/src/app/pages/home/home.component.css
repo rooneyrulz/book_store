@@ -1,0 +1,28 @@
+.Home .jumbotron {
+  background: rgb(36, 60, 168);
+  color: #f4f4f4;
+}
+
+.btn-home {
+  padding: 1rem 2rem;
+  background: #f4f4f4;
+  color: rgb(36, 60, 168) !important;
+}
+
+.btn-home-login {
+  padding: 1rem 2rem;
+  background: rgb(36, 60, 168);
+  color: #f4f4f4 !important;
+  border: 1px solid #f4f4f4;
+}
+
+.btn-home:hover {
+  background: rgb(36, 60, 168) !important;
+  color: #f4f4f4 !important;
+  border: 1px solid #f4f4f4;
+}
+
+.btn-home-login:hover {
+  background: #f4f4f4;
+  color: rgb(36, 60, 168) !important;
+}

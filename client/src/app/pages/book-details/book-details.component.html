@@ -1,0 +1,48 @@
+<div class="Book-Details">
+  <ng-container *ngIf="loading; else elseTemplate">
+    <app-spinner></app-spinner>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-error *ngIf="error" [error]="error"></app-error>
+    <div class="row">
+      <div class="col col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <strong>Title</strong><br>
+            <span class="">{{book.name}}</span>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col col-sm-12">
+                <strong>Description</strong>
+                <p class="">{{book.description}}</p>
+              </div>
+                <div class="col col-sm-12">
+                  <strong>Author</strong><br>
+                  <span>{{book.author.name}}</span>
+                </div>
+              <div class="col col-sm-12 mt-3">
+                <strong>Created At</strong><br>
+                <span>{{book.date}}</span>
+              </div>
+              <div class="col col-sm-12 mt-3">
+                <strong>Total Books</strong><br>
+                <span>{{book.author.books.length}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button (click)="onHandlePrev()" class="btn btn-prev text-light">
+              Go Back
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col col-sm-12 col-md-6">
+        <div class="card">
+            <app-avatar [img]="book.bookImage"></app-avatar>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

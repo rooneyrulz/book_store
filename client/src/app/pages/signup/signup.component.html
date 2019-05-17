@@ -1,0 +1,38 @@
+<div class="Signup">
+  <h1 class="mb-5 form-header display-4">Sign Up</h1>
+  <app-error *ngIf="error" [error]="error"></app-error>
+  <form (submit)="onHandleSignUp()">
+    <div class="form-row">
+      <div class="form-group col-sm-12">
+        <label for="inputname">Name</label>
+        <input [(ngModel)]="name" name="name" type="text" class="form-control form-control-lg" id="inputname" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-6">
+        <label for="inputemail">Email</label>
+        <input [(ngModel)]="email" name="email" type="email" class="form-control form-control-lg" id="inputemail" placeholder="Email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="inputAge">Age</label>
+        <input [(ngModel)]="age" name="age" type="number" class="form-control form-control-lg" id="inputAge" placeholder="Age">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-12">
+        <label for="inputpassword">Password</label>
+        <input [(ngModel)]="password" name="password" type="password" class="form-control form-control-lg" id="inputpassword"
+          placeholder="Password">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-12">
+        <label for="inputpassword2">Confirm Password</label>
+        <input [(ngModel)]="password2" name="password2" type="password" class="form-control form-control-lg" id="inputpassword2"
+          placeholder="Confirm Password">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-signup text-light btn-lg">Sign Up</button>
+  </form>
+</div>

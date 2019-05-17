@@ -1,0 +1,14 @@
+nav {
+  background: rgb(36, 60, 168);
+}
+
+.navbar-brand {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.icon-counter {
+  border: 2px solid #fff;
+  padding: .35rem .65rem;
+  border-radius: 1rem;
+  color: #fff;
+}

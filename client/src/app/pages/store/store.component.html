@@ -1,0 +1,22 @@
+<div class="Store">
+  <ng-container *ngIf="loading; else elseTemplate">
+    <app-spinner></app-spinner>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-error *ngIf="error" [error]="error"></app-error>
+    <div class="row">
+      <div *ngFor="let book of booksList" class="col col-sm-12 col-md-4">
+        <div class="card mb-5">
+          <app-avatar [img]="book.bookImage"></app-avatar>
+          <div class="card-body">
+            <h4 class="card-title">{{book.name}}</h4>
+            <p class="card-text">{{book.description}}</p>
+          </div>
+          <div class="card-footer">
+            <button (click)="onDeleteCartItem(book._id)" class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

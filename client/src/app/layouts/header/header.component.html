@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-md navbar-dark mb-5">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">Book Store</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="!isAuth" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li *ngIf="isAuth" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/']">Books</a>
+        </li>
+        <li *ngIf="isAuth" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/new-book']">New Book</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <ng-container *ngIf="isAuth; else elseTemplate">
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" [routerLink]="['/store']">My Store
+              <span class="icon-counter bg-danger ml-1">{{ user.books.length }}</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="onHandleLogOut()" href="#!">Logout</a>
+          </li>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" [routerLink]="['/signup']">Sign Up</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" [routerLink]="['/login']">Log In</a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>

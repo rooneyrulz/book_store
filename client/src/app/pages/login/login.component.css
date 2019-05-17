@@ -1,0 +1,12 @@
+.Login {
+  width: 60%;
+  margin: 3rem auto;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.btn-login {
+  background: rgb(36, 60, 168);
+}
