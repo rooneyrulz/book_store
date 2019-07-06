@@ -1,9 +1,31 @@
 nav {
-  background: rgb(36, 60, 168);
+  background: transparent;
+  border-bottom: 2px solid #fff;
 }
 
 .navbar-brand {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Operator Mono';
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.navbar-toggler:hover {
+  font-size: 1.32rem !important;
+  color: #fff !important;
+}
+
+.nav-link {
+  font-family: 'Operator Mono';
+  text-transform: uppercase;
 }
 
 .icon-counter {

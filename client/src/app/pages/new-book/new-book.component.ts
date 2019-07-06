@@ -12,7 +12,7 @@ import { Book } from 'src/app/models/book.model';
 export class NewBookComponent implements OnInit {
   name: string;
   description: string;
-  selectedImage: File = null;
+  selectedImage: File;
   error: string;
 
   constructor(
@@ -27,20 +27,28 @@ export class NewBookComponent implements OnInit {
   }
 
   onHandleCreate() {
-    const fb = new FormData();
-    fb.append('name', this.name);
-    fb.append('description', this.description);
-    fb.append('bookImage', this.selectedImage, this.selectedImage.name);
+    if (!this.name) {
+      this.error = 'Book name is not valid';
+    } else if (!this.description) {
+      this.error = 'Description is not valid';
+    } else if (!this.selectedImage) {
+      this.error = 'Select an image of your book';
+    } else {
+      const fb = new FormData();
+      fb.append('name', this.name);
+      fb.append('description', this.description);
+      fb.append('bookImage', this.selectedImage, this.selectedImage.name);
 
-    this.bookService.createBook(fb).subscribe(
-      (data: Book) => {
-        if (data) {
-          this.router.navigate(['']);
+      this.bookService.createBook(fb).subscribe(
+        (data: Book) => {
+          if (data) {
+            this.router.navigate(['']);
+          }
+        },
+        error => {
+          this.error = error;
         }
-      },
-      error => {
-        this.error = error;
-      }
-    );
+      );
+    }
   }
 }

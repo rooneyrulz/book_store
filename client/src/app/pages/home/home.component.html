@@ -1,10 +1,9 @@
 <div class="Home">
   <div class="jumbotron my-5">
-    <h1 class="display-3">Book Store</h1>
+    <h1 class="display-2">Book Store</h1>
     <br>
-    <p class="lead">It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <br>
-    <a class="btn btn-home text-light btn-lg mr-2 mb-2" href="/" role="button">Get Started</a>
-    <a class="btn btn-home-login btn-lg mb-2" href="/login" role="button">Log In</a>
+    <a id="btn-start" class="btn btn-home text-light btn-lg mr-2 mb-2" [routerLink]="['/']" role="button">Get Started</a>
+    <a id="btn-login" class="btn btn-home btn-lg mb-2" [routerLink]="['/login']" role="button">Log In</a>
   </div>
 </div>

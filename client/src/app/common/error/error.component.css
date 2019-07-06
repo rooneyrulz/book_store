@@ -1,4 +1,5 @@
 .alert {
-  background: rgb(233, 42, 80);
-  color: #5e0606;
+  background: rgb(190, 81, 103);
+  font-family: 'Operator Mono';
+  border: 1px solid rgb(128, 51, 51);
 }

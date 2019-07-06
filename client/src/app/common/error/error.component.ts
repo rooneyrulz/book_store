@@ -6,10 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./error.component.css']
 })
 export class ErrorComponent implements OnInit {
-  @Input() private readonly error: string;
+  @Input() error: string;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      this.error = '';
+    }, 4000);
+  }
 
 }

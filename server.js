@@ -61,6 +61,7 @@ async function init() {
     const isConnected = await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useCreateIndex: true,
+      useFindAndModify: false,
     });
     if (isConnected) {
       // Listening to server

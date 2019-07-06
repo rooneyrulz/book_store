@@ -7,10 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AvatarComponent implements OnInit {
   @Input() private readonly img: string;
+  splitedImg: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.splitedImg = this.img.split('\\')[4];
   }
 
 }

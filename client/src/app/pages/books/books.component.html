@@ -6,13 +6,13 @@
     <app-error *ngIf="error" [error]="error"></app-error>
     <div class="row">
       <div *ngFor="let book of booksList" class="col col-sm-12 col-md-4">
-        <div class="card mb-4">
+        <div class="card text-dark mb-4">
           <app-avatar [img]="book.bookImage"></app-avatar>
           <div class="card-body">
             <h4 class="card-title">{{book.name}}</h4>
           </div>
           <div class="card-footer">
-            <button (click)="onHandleLook(book._id)" class="btn btn-book mb-2 text-light">Look</button>
+            <button (click)="onHandleLook(book._id)" class="btn btn-book mb-2 text-light">Check</button>
             <div class="author-text text-right text-muted">
               <small>
                 <strong>Author: </strong>

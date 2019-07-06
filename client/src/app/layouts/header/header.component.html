@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark mb-5">
+<nav class="navbar navbar-expand-lg navbar-dark py-4 mb-5">
   <div class="container">
     <a class="navbar-brand" [routerLink]="['/']">Book Store</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -24,7 +24,7 @@
         <ng-container *ngIf="isAuth; else elseTemplate">
           <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
             <a class="nav-link" [routerLink]="['/store']">My Store
-              <span class="icon-counter bg-danger ml-1">{{ user.books.length }}</span>
+              <span class="icon-counter bg-danger">{{ user.books.length }}</span>
             </a>
           </li>
           <li class="nav-item">

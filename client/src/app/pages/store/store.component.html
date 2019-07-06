@@ -6,7 +6,7 @@
     <app-error *ngIf="error" [error]="error"></app-error>
     <div class="row">
       <div *ngFor="let book of booksList" class="col col-sm-12 col-md-4">
-        <div class="card mb-5">
+        <div class="card text-dark mb-5">
           <app-avatar [img]="book.bookImage"></app-avatar>
           <div class="card-body">
             <h4 class="card-title">{{book.name}}</h4>

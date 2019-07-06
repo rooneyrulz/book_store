@@ -2,7 +2,7 @@ import multer, { diskStorage } from 'multer';
 
 const storage = diskStorage({
   destination: (req, file, cb) => {
-    cb(null, './public/uploads');
+    cb(null, './client/src/assets/uploads');
   },
 
   filename: (req, file, cb) => {

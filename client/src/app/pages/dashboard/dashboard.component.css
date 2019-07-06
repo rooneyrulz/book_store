@@ -1,3 +1,32 @@
+.Dashboard .jumbotron {
+  background-image: url('/assets/images/dashboard.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #f4f4f4;
+  text-align: center;
+  align-items: center;
+}
+
+.Dashboard .jumbotron h1 {
+  font-family: 'Operator Mono';
+  font-weight: bold;
+  text-shadow: 2px 3px 1px #111;
+}
+
 .btn-dashboard {
-  background: rgb(36, 60, 168);
+  padding: 1rem 2rem;
+  color: #f4f4f4 !important;
+  font-family: 'Operator Mono';
+  background: transparent;
+  box-shadow: 3px 3px 2px #111;
+  transition-property: all;
+  transition-duration: .4s;
+  transition-timing-function: ease-in;
+}
+
+.btn-dashboard:hover {
+  background: #f4f4f4;
+  color: #111 !important;
+  box-shadow: none !important;
 }

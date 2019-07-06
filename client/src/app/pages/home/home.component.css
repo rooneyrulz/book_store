@@ -1,28 +1,37 @@
 .Home .jumbotron {
-  background: rgb(36, 60, 168);
+  background-image: url('/assets/images/home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: #f4f4f4;
+  text-align: left;
+  align-items: center;
+}
+
+.Home .jumbotron h1 {
+  font-family: 'Operator Mono';
+  font-weight: bold;
+  text-shadow: 2px 3px 1px #111;
 }
 
 .btn-home {
   padding: 1rem 2rem;
-  background: #f4f4f4;
-  color: rgb(36, 60, 168) !important;
-}
-
-.btn-home-login {
-  padding: 1rem 2rem;
-  background: rgb(36, 60, 168);
   color: #f4f4f4 !important;
-  border: 1px solid #f4f4f4;
+  font-family: 'Operator Mono';
+  box-shadow: 1px 3px 2px #111;
+  background: transparent;
+  transition-property: all;
+  transition-duration: .4s;
+  transition-timing-function: ease-in;
 }
 
-.btn-home:hover {
-  background: rgb(36, 60, 168) !important;
-  color: #f4f4f4 !important;
-  border: 1px solid #f4f4f4;
+#btn-start:hover {
+  border: 1px solid #f4f4f4 !important;
+  box-shadow: none !important;
 }
 
-.btn-home-login:hover {
-  background: #f4f4f4;
-  color: rgb(36, 60, 168) !important;
+#btn-login:hover {
+  background: #f4f4f4 !important;
+  color: #111 !important;
+  box-shadow: none !important;
 }
