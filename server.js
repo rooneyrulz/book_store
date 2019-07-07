@@ -49,6 +49,16 @@ app.use('/api/download-csv', downloadRoute);
 app.use('/users', userRoute);
 app.use('/user/auth', authRoute);
 
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 // Set port
 app.set('port', process.env.PORT || 3000);
 
@@ -59,6 +69,10 @@ mongoose.Promise = require('bluebird');
 async function init() {
   try {
     const isConnected = await mongoose.connect(mongoURI, {
+      auth: {
+        user: 'user-name',
+        password: 'user-password',
+      },
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,
@@ -71,7 +85,8 @@ async function init() {
       console.log(`connecting to mongodb...`);
     }
   } catch (error) {
-    throw error.message;
+    // process.exit(1);
+    console.log(error.message);
   }
 }
 
