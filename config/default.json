@@ -1,4 +1,4 @@
 {
-  "MONGO_URI": "mongodb://rooney:rooney123@ds057934.mlab.com:57934/book_store",
+  "MONGO_URI": "your-mongo-uri",
   "JWT_KEY": "book.store@jwt.com"
 }
