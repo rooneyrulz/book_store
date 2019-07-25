@@ -21,7 +21,7 @@ export class BookService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.get<Book[]>(`${this.uri}/api/books`, { headers })
+    return this.http.get<Book[]>(`/api/books`, { headers })
       .pipe(
         retry(2),
         catchError(this.errorHandler)
@@ -34,7 +34,7 @@ export class BookService {
     const headers = new HttpHeaders({
       'x-auth-token': this.token
     });
-    return this.http.post<Book>(`${this.uri}/api/book/add`, body, { headers })
+    return this.http.post<Book>(`/api/book/add`, body, { headers })
       .pipe(
         catchError(this.errorHandler)
       );
@@ -44,7 +44,7 @@ export class BookService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.get<Book>(`${this.uri}/api/book/${id}`, { headers })
+    return this.http.get<Book>(`/api/book/${id}`, { headers })
       .pipe(
         retry(2),
         catchError(this.errorHandler)

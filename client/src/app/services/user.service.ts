@@ -19,7 +19,7 @@ export class UserService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.post<Auth>(`${this.uri}/users/add`, user, { headers })
+    return this.http.post<Auth>(`/users/add`, user, { headers })
       .pipe(
         catchError(this.errorHandler)
       );

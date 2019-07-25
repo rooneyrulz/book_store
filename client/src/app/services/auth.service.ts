@@ -23,7 +23,7 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.post<Auth>(`${this.uri}/user/auth`, body, { headers })
+    return this.http.post<Auth>(`/user/auth`, body, { headers })
       .pipe(
         catchError(this.errorHandler)
       );
@@ -48,7 +48,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       'x-auth-token': this.token
     });
-    return this.http.get<User>(`${this.uri}/user/auth/user`, { headers });
+    return this.http.get<User>(`/user/auth/user`, { headers });
   }
 
   // Logout user

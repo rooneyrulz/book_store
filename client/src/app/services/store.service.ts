@@ -24,7 +24,7 @@ export class StoreService {
       'Content-Type': 'application/json',
       'x-auth-token': this.token
     });
-    return this.http.get<Book[]>(`${this.uri}/api/user/books`, { headers })
+    return this.http.get<Book[]>(`/api/user/books`, { headers })
       .pipe(
         retry(3),
         catchError(this.errorHandler)
@@ -38,7 +38,7 @@ export class StoreService {
       'Content-Type': 'application/json',
       'x-auth-token': this.token
     });
-    return this.http.delete<Book>(`${this.uri}/api/book/${id}`, { headers })
+    return this.http.delete<Book>(`/api/book/${id}`, { headers })
       .pipe(
         catchError(this.errorHandler)
       );
